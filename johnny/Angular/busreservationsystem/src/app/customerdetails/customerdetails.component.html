@@ -1,0 +1,48 @@
+<body>
+  <div class="box1"><br>
+    <h1>CUSTOMER DETAILS</h1><br>
+<form [formGroup]="customerform" (ngSubmit)="onSubmit()">
+  <label for="name" class="lable"><h3><b>Customer Name</b></h3></label>
+  <input id="name" type="text" formControlName="name" class="text" required ngModel/><br>
+ 
+  <label for="age" class="lable"><h3><b>Age</b></h3></label>
+  <input id="age" type="text" formControlName="age" class="text" required><br>
+ 
+  <label for="address" class="lable"><h3><b>Customer Address</b></h3></label>
+  <input id="address" type="textarea" formControlName="address"  class="textarea" required><br>
+ 
+  <label for="phone" class="lable"><h3><b>Phone number</b></h3></label>
+  <input id="phone" type="number" formControlName="phone" class="text" required><br>
+ 
+  <label for="email" class="lable"><h3><b>Email</b></h3></label>
+  <input id="email" type="email" formControlName="email" class="text" required><br><br>
+ 
+  <button type="submit" value="submit" class="button" [disabled]="!customerform.valid"><b>Submit</b></button>&nbsp;&nbsp;
+  <a routerLink="/Catalog"><button type="submit" value="submit" class="button" ><b>Next</b></button></a>
+</form>
+
+
+<h2 class="head">BOOKED TABLE</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>Age</th>
+        <th>Customer Address</th>
+        <th>Phone number</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customerDetails">
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.age }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</body>
+<router-outlet></router-outlet>

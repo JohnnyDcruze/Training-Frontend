@@ -1,0 +1,24 @@
+<p>customerdetails works!</p>
+<p>hello world</p>
+<b>Name</b>{{firstName}}&nbsp;&nbsp;{{lastName}}<br>
+<b>age</b>{{age}}<br>
+<b>email</b>{{email}}<br>
+<b>Join Status</b><input type="checkbox"[checked]="joinStatus"/><br>
+<b>choose your location</b>
+<button [disabled]="joinStatus" [class]="stylename">confirm</button><br>
+<select size="1" [value]="location">
+    <option value="Bangalore">Bangalore</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Hydrabed">Hydrabed</option>
+    <option value="Kerala">Kerala</option>
+</select>
+<div class="divstyle">
+    style attached using class binding..
+</div>
+<label><b>First Name</b></label>
+<input type="text" [(ngModel)]="firstName"/><br>
+<label><b>First Name</b></label>
+<input type="text" [(ngModel)]="lastName"><br>
+<b>Hello world {{firstName}}&nbsp;{{lastName}}</b><br>
+<b>Age</b><input type="number"[(ngModel)]="age"/><br>
+<input type="range" min="18" max="35"[(ngModel)]="age">

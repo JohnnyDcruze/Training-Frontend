@@ -1,0 +1,9 @@
+.bstyle{
+    color: brown;
+    height: 90px;width: 150px;
+}
+.divstyle{
+    border: 10px ridge;
+    border-color: cadetblue;
+
+}

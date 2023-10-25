@@ -1,0 +1,11 @@
+<b>Enter your details</b>
+<form [formGroup]="frmGroup" (ngSubmit)="processData()">
+  First Name: <input type="text" name="firstName" formControlName="firstName"/><br>
+  Last Name:<input type="text" name="lastName" formControlName="lastName"/><br>
+  age:<input type="number" name="age" formControlName="age" required/><br>
+  Email:<input type="email" name="email" formControlName="email"><br>
+
+  <input type="submit" value="save" [disabled]="!frmGroup.valid"/>
+
+</form>
+<router-outlet></router-outlet>

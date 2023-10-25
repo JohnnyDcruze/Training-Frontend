@@ -1,0 +1,29 @@
+<body>
+<div><br>
+    <h1>BUS CATALOGUE</h1><br>
+    <ng-container *ngIf="travelName && luxuryType">
+    <br>
+    <label class="label"><h3><b>Travel's Name </b></h3></label>
+    <select [(ngModel)]="travelName" class="text" (ngModelChange)="handleTravelNameChange()">
+    <option value="Ganga">Ganga</option>
+    <option value="Yamuna">Yamuna</option>
+    <option value="Lakshmi">Lakshmi</option>
+    <option value="Krishna">Krishna</option>
+    </select>
+    <br><br>
+    <label class="label"><h3><b>Luxury Type </b></h3></label>
+    <select [(ngModel)]="luxuryType" class="text" (ngModelChange)="handleLuxuryTypeChange()">
+    <option value="Ac Sleeper">Ac Sleeper</option>
+    <option value="Non Ac Sleeper">Non Ac Sleeper</option>
+    <option value="Ac Seater">Ac Seater</option>
+    <option value="Non Ac Seater">Non Ac Seater</option>
+    </select>
+    <br><br>
+    <label class="label"><h3><b>Price </b></h3><div>{{ price }}</div></label>
+    <br><br>
+    <a routerLink="/BookingDetail">
+    <button class="button"><h3>Next</h3></button>
+    </a>
+    </ng-container>
+    </div>
+</body>

@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>JavaScript</title>
+        <script>
+            function validate()
+{
+var fname=document.getElementById("firstname").value
+var lname=document.getElementById("lastname").value
+var uid=document.getElementById("UserId").value
+submitOK=true
+const specialChars = `\`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`;
+
+if (fname.length>25||lname.length>25||fname.includes(specialChars)||lname.includes(specialChars))
+ {
+ alert("The name must be less than 25 characters")
+document.getElementById ("fname").focus ()
+ submitOK=false
+  }
+
+
+  if(uid.document.forms)
+  {
+    alert("The uid must be of number")
+document.getElementById ("UserId").focus ()
+ submitOK=false
+  }
+
+if (!submitOK)
+ {
+ return false
+ }
+            
+}         
+        </script>
+    </head>
+    <body>
+        <form id="MyForm" name="Validation" action="javascript:alert('All Ok')" onsubmit="return validate()">
+        <p><b style="color: red;"><h2>Tell us about yourself</h2></b></p>
+        <p><h2><b style="color: blue;">Your Name</b></h2></p>
+        <p style="color:violet ;"><i><b>First name :</b></i></p>
+        <input type="text" id="firstname" required />
+
+        <p style="color:violet ;"><i><b>Last name :</b></i></p>
+        <input type="text" id="lastname"required/>
+
+        <p><h2 style="color:blue ;">Postal Code</h2></p>
+        <input type="number" min="6"/>
+
+        <p><b style="color: red;"><h2>Select an ID and password</h2></b></p>
+
+        <p><h2 style="color:blue ;">UserID</h2></p>
+        <input type="text" id="UserId"/>
+
+        <p><h2 style="color:blue ;">Password</h2></p>
+        <input type="password"/>
+
+        <p><h2 style="color:blue ;">Re-type Password</h2></p>
+        <input type="password"/><br><br><br>
+
+        <input type="submit" value="submit" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="close"/>
+
+    
+    
+        </form>
+    </body>
+</html>

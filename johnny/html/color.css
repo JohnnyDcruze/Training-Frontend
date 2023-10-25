@@ -1,0 +1,14 @@
+.color{
+background-color: violet;
+}
+
+.textclr{
+color:violet;
+}
+
+.vertical-text {
+border 0;
+
+-webkit-transform:rotate(-90deg);
+
+  }

@@ -1,0 +1,102 @@
+<b>personal details</b><br />
+<!--Event binding-->
+<b>FirstName</b
+><input
+  type="text"
+  [(ngModel)]="firstName"
+  (blur)="verifyFirstName($event)"
+/><br /><!--$event refers to the firstname event-->
+<b>LastName</b><input type="text" [(ngModel)]="lastName" /><br />
+<b>age</b><input type="number" [(ngModel)]="age" /><br />
+<b>Gender</b>
+<legend>
+  <label>Male</label>
+  <input type="radio" [(ngModel)]="gender" value="Male" name="gender" /><br />
+  <label>Female</label>
+  <input type="radio" [(ngModel)]="gender" value="female" name="gender" /><br />
+</legend>
+<select size="4" [(ngModel)]="favcolor">
+  <option value="Red">Red</option>
+  <option value="Violet">Violet</option>
+  <option value="Green">Green</option>
+  <option value="Yellow">Yellow</option>
+  <option value="Silver">Silver</option>
+</select>
+<div [style.color]="favcolor">
+  Sample preview<br />
+  Sample preview<br />
+  Sample preview<br />
+</div>
+<input type="checkbox" [(ngModel)]="enable" /><br />
+<b>Your Favourite theme</b>
+<select [(ngModel)]="favTheme">
+  <option value="theme1">Theme1</option>
+  <option value="theme2">Theme2</option>
+  <option value="theme3">Theme3</option>
+  <option value="theme4">Theme4</option>
+</select>
+
+<!--class Binding-->
+<div [class]="favTheme">
+  Vennilave Vennilave vinnai thandi varuvaya ....<br />
+  Vilayada Jodi thevai.....
+</div>
+<br />
+<!--property Binding-->
+<input type="button" value="save" [disabled]="!enable" (click)="save()" /><br />
+<b>Preview</b><br />
+<div style="width: 500px; height: 700px">
+  Name {{ firstName }}&nbsp;{{ lastName }}<br />
+  age {{ age }}<br />
+  gender {{ gender }}<br />
+  favcolor {{ favcolor }}<br />
+  enabled {{ enable }}<br />
+  <input type="checkbox" [value]="isDisplayed" [(ngModel)]="isDisplayed" />Agree
+  <b *ngIf="isDisplayed"
+    ><button>Display this only if enabled is true</button></b
+  >
+  <b *ngIf="!isDisplayed">please agree to the terms and conditions</b>
+  <br />
+
+  <input type="checkbox" [value]="YesNo" [(ngModel)]="YesNo" />hello
+  <b *ngIf="YesNo; else dontshow"><button>get payment</button></b>
+  <ng-template #dontshow><b>is this working</b></ng-template><br>
+
+  your salary<input type="number" [(ngModel)]="salary">
+  <b *ngIf="salary>=20000 && salary<=50000;else minsal"></b>
+  <ng-template #minsal><b>minimum salary</b></ng-template><br>
+
+  <b>Total number of employees  =</b>{{names.length}}
+
+  <ol  >
+    <li *ngFor="let name of names.reverse()" type="A">
+      Name : {{name | uppercase}},  
+    </li>
+  </ol>
+  <b>List of Cities</b><br>
+  <select size="1"[(ngModel)]="location">
+    <option value="chennai">classical city</option>
+    <option value="jaipur">pink city</option>
+    <option value="Hydrabed">Nizam's city</option>
+    <option value="Bangalore">Electronic city</option>
+  </select>
+  <p [ngSwitch]="location">
+    <b *ngSwitchCase="'chennai'">your location is classical city</b>
+    <b *ngSwitchCase="'jaipur'">your location is pink city</b>
+    <b *ngSwitchCase="'Hydrabed'">your location is Nizam's city</b>
+    <b *ngSwitchCase="'Bangalore'">your location is Electronic city</b>
+  </p>
+  <input type="checkbox" [(ngModel)]="background"/>want a background color
+  <div style="width: 400px ; height: 200px;" [style.background]="background?'red': 'yellow'">
+    <h2>
+  <b>venmegam pennaga uruvanatho </b><br>
+  <b>inneram enai parthu vilayadutho</b><br>
+  <b>unnale pala niyabagm</b><br>
+  <b>en munne vanthaduthe .........</b>
+</h2>
+</div>
+
+
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,29 @@
+<p>Name :  {{ name | uppercase }}</p>
+<p>Fathername : {{(name | slice:11 : name.length)|uppercase}}</p>
+<p>Birth Date : {{date | date}}</p>
+<p>{{name}} Salary is {{salary}}</p>
+Salary <b>{{salary|currency}}</b><br>
+Salary <b>{{salary|currency:'USD'}}</b><br>
+Salary <b>{{salary|currency:'INR'}}</b><br>
+Join date <b>{{date | date }}</b><br>
+
+Join date <b>{{date | date:'fullDate' }}</b><br>
+Join date <b>{{date | date:'shortDate' }}</b><br>
+Join date <b>{{date | date:'fullTime' }}</b><br>
+Join date <b>{{date | date:'shortTime' }}</b><br>
+Join date <b>{{date | date:'M/yyyy/dd' }}</b><br>
+Join date <b>{{date | date:'M/yy/dd h:m:ss a' }}</b><br>
+Join date <b>{{date | date:'hh:m:ss a zh' }}</b><br>
+
+
+
+Your salary <input type="number" [(ngModel)]="salary"/>
+currency List<br>
+<select [(ngModel)]="currency">
+  <option value="INR">INDIAN RUPEE</option>
+  <option value="USD">US</option>
+  <option value="GBP">BRITISH</option>
+  <option value="EUR">EUROPE</option>
+</select>
+Your Salary is {{salary|currency:currency}}
+<router-outlet></router-outlet>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#"  onsubmit="output()">
+        BikeName<input type="text" id="name"/><br>
+        Manufacturingyear<input type="number" id="mfgYear"/><br>
+        save<input type="submit" id="save" />
+    </form>
+    <p id="p1"></p>
+    <script>
+        class Bike{
+            name="RE";
+            year="2020"; 
+            setName(name)
+            {
+                this.name=name;
+            }
+            setYear(mfgYear)
+            {
+                this.year = mfgYear;
+            }
+            getName()
+            {
+                return this.name;
+            }
+            getYear()
+            {
+                return this.year;
+            }
+        }
+
+        function output()
+        {
+        const b1=new Bike();
+        b1.setName(document.getElementById("name").value);
+        b1.setYear(document.getElementById("mfgYear").value);
+        document.getElementById("p1").innerHTML=b1.getName()+""+b1.getYear();
+        }
+    </script>
+</body>
+</html>

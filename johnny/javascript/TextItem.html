@@ -1,0 +1,38 @@
+<html>
+<head>
+<script type="text/javascript">
+
+function convert ()
+{
+
+	var a = document.MyForm.FirstName.value; //document.MyForm.FirstName.value;
+	document.MyForm.FirstName.value = a.toUpperCase ();
+	ln=document.getElementById("LastName");
+	var b=ln.value;
+	ln.value=b.toUpperCase();
+}
+function checkFirstName()
+{ 
+	var a = document.MyForm.FirstName.value;
+	if (a=="")
+	{
+		document.getElementById("error").innerHTML="first name is mandatory";
+	}
+}
+function clearMessage(){
+	document.getElementById("error").innerHTML="*";
+}
+</script>
+</head>
+
+<body>
+<form name="MyForm">
+<input name = "FirstName" type="text" id="MyName" onfocus="clearMessage()" onblur="checkFirstName()"/>
+<label id="error" style="color: rgba(255, 0, 0, 0.756);">*</label><br>
+<input name = "LastName" type="text" id="LastName" />
+<input type="button" onclick="convert()" value="Convert" />
+</form>
+</body>
+
+</html>
+

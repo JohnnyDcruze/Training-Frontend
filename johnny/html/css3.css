@@ -1,0 +1,14 @@
+
+p{
+color:yellow;
+border:3px;
+border-style:dashed;
+background-color:teal;
+border-color:black;
+}
+#p1{
+color:teal;
+border:3px;
+border-style:dashed;
+background-color:yellow;
+}

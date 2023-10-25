@@ -1,0 +1,75 @@
+<div>
+    <ng-container *ngIf="today; else loading">
+        <form (ngSubmit)="validate($event)">
+          <b class="titleStyle">Booking Details</b><br><br>
+          <label class="labelStyle">
+            <b>Name : </b>
+          </label>
+          <input
+            type="text"
+            id="passengername"
+            placeholder="Enter your name"
+            class="inputStyle"
+            [(ngModel)]="passengername"
+            (ngModelChange)="handleNameChange($event)"
+          /><br><br>
+          <label class="labelStyle">
+            <b>Journey Date : </b>
+          </label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            class="inputStyle"
+            [(ngModel)]="startDate"
+            (ngModelChange)="handleDateChange($event)"
+            [min]="today"
+            required
+          /><br><br>
+          <label class="labelStyle">
+            <b>Origin : </b>
+          </label>
+          <select
+            id="origin"
+            class="inputStyle"
+            [(ngModel)]="origin"
+            (ngModelChange)="handleOriginChange($event)"
+          >
+            <option value="">Select an Origin place</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Trichy">Trichy</option>
+            <option value="Rameshwaram">Rameshwaram</option>
+          </select><br><br>
+          <label class="labelStyle">
+            <b>Destination : </b>
+          </label>
+          <select
+            id="destination"
+            class="inputStyle"
+            [(ngModel)]="destination"
+            (ngModelChange)="handleDestinationChange($event)"
+          >
+            <option value="">Select a Destination place</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Trichy">Trichy</option>
+            <option value="Rameshwaram">Rameshwaram</option>
+          </select><br><br><br><br>
+          <a routerLink="/BookingTable">
+            <button
+              type="submit"
+              id="submit"
+              class="buttonStyle"
+              [disabled]="disable"
+              (click)="successful()"
+            >
+              Add
+            </button>
+          </a>
+          <button type="reset" class="buttonStyle">Reset</button>
+        </form>
+    </ng-container>
+    <ng-template #loading>Loading...</ng-template>
+  </div>
+  

@@ -1,0 +1,42 @@
+<body><br><br>
+  <h1>BOOKING DETAILS</h1><br>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="passengerName" class="lable"><h3><b>Passenger Name</b></h3></label>
+  <input type="text" id="passengerName" name="passenger" class="text" formControlName="passengerName" /><br><br>
+
+  <label for="journeyDate" class="lable"><h3><b>Journey Date</b></h3></label>
+  <input
+    type="date"
+    id="journeyDate"
+    class="text"
+    name="date"
+    [min]="currentDate"
+    formControlName="journeyDate"
+  /><br><br>
+
+  <label for="origin" class="lable"><h3><b>Origin</b></h3></label>
+  <select id="origin" class="text" name="origin" >
+    <option value="Chennai" selected>Chennai</option>
+    <option value="Bangalore">Bangalore</option>
+    <option value="Trichy">Trichy</option>
+    <option value="Rameshwaram">Rameshwaram</option>
+  </select><br><br>
+  
+
+  <label for="destination" class="lable"><h3><b>Destination</b></h3></label>
+  <select id="destination" class="text" name="dest" formControlName="destination" (change)="this.validateOriginDestination()"> 
+    <option value="Chennai">Chennai</option>
+    <option value="Bangalore" selected>Bangalore</option>
+    <option value="Trichy">Trichy</option>
+    <option value="Rameshwaram">Rameshwaram</option><br>
+  </select><br><br>
+
+  <a routerLink="/bookedTable"><button type="submit" class="button" value="submit"><b>Submit</b></button> </a>
+</form>
+
+</body>
+<router-outlet></router-outlet>
+
+
+
+

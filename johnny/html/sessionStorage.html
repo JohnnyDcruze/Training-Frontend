@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Storage</title>
+</head>
+<body>
+<script>
+	function saveData()
+	{
+	  i=document.forms[0].isbn.value;
+          t=document.forms[0].Book_title.value;
+          console.log(i);
+          console.log(t);
+	  sessionStorage.isbn=i;
+          sessionStorage.title=t;
+	}
+        function printData()
+	{
+	  para=document.getElementsByName("data");
+          para[0].innerHTML=sessionStorage.isbn;
+           para[1].innerHTML=sessionStorage.title;
+        }
+
+</script>
+<b>Book Details</b>
+<form>
+ISBN<input type ="text"  name="isbn" required/><br>
+Title<input type="text"name="Book_title" /><br>
+<input type="button" value="Save" onclick="saveData()"/><br>
+<input type="button" value="Get" onclick="printData()"/><br>
+<input type="reset" value="Reset"/>
+</form><br>
+<p name="data">Book data</p>
+<p name="data"> all the Book data</p>
+</body>
+</html>

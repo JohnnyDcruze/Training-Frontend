@@ -1,0 +1,18 @@
+<html>
+    <body>
+            <b>Please Signin to Proceed further</b><br>
+            <form (ngSubmit)="addAUser()">
+                <legend>
+                    User Id : <input type="text" name="userid" [(ngModel)]="user.userid" placeholder="Enter your UserId"/><br>
+                    Password : <input type="password" name="password" [(ngModel)]="user.password" placeholder="Enter your password"/><br>
+                    Email id: <input type="email" name="emailid" [(ngModel)]="user.emailid"/>
+                </legend>
+                <legend>
+                    <input type="submit" value="Add user "/><br>
+                    <input type="reset"  value="Reset"/>
+                </legend>
+            </form>
+    </body>    
+</html>
+
+<router-outlet></router-outlet>
